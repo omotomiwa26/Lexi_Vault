@@ -13,3 +13,5 @@ CREATE TABLE IF NOT EXISTS dictionary (
     meanings TEXT
 );
 
+-- This Inserts the values into the table dictionary
+
