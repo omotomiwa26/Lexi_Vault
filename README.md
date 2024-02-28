@@ -15,5 +15,6 @@ Implement specified branch strategy; merge often
 Merging code frequently is a great way to avoid a broken application the night before the presentation.
 
 [OMOTOMIWA RAHEEM](https://github.com/omotomiwa26)
+
 [AJIDE REMILEKUN](https://github.com/thekhalifaguy)
 
