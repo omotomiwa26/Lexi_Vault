@@ -93,6 +93,20 @@ footer {
     transform: none;
 }
 
+.menu_links a {
+    color: rgb(41, 56, 71);
+    transition: color 0.3s ease;
+}
+
+.menu_links a:hover {
+    color: orangered;
+}
+
+.menu_links li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
 
 
 
