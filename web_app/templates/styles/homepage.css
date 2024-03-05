@@ -78,10 +78,10 @@ footer {
 
 .menu_links {
     position: absolute;
-    width: 300px;
+    width: 150px;
     height: 100vh;
     margin: -100px 0 0 -50px;
-    padding: 125px 50px 50px 50px;
+    padding: 100px 20px 20px 20px;
     background-color: #ededed;
     list-style: none;
 
@@ -91,6 +91,20 @@ footer {
 
 .menu_toggle input:checked ~ ul {
     transform: none;
+}
+
+.menu_links a {
+    color: rgb(23, 97, 172);
+    transition: color 0.3s ease;
+}
+
+.menu_links a:hover {
+    color: yellowgreen;
+}
+
+.menu_links li {
+    padding: 10px 0;
+    font-size: 22px;
 }
 
 
