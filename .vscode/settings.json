@@ -1,0 +1,12 @@
+{
+    "remote.extensionKind": {
+        
+
+
+        "wakatime.vscode-wakatime": ["ui"],
+        "git.vscode-git": ["ui"],
+        "pub.name": [
+            "ui"
+        ]
+    }
+}
