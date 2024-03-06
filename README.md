@@ -1,7 +1,6 @@
 
-Lexi_Vault App README
-Overview
-Welcome to Lexi_Vault, your go-to application for building and managing a personalized lexicon or vocabulary vault. This README provides a detailed guide on using Lexi_Vault, its features, installation, and customization options.
+Lexi_Vault App README Overview Welcome to Lexi_Vault, your go-to application for building and managing a personalized lexicon or vocabulary vault. This README provides a detailed guide on using Lexi_Vault, its features, installation, and customization options.
+a personalized lexicon or vocabulary vault. This README provides a detailed guide on using Lexi_Vault, its features, installation, and customization options.
 
 Table of Contents
 Introduction
@@ -143,4 +142,3 @@ Review the license for details on usage, distribution, and modifications.
 Open Source Contribution
 Lexi_Vault welcomes open-source contributions. Feel free to fork the repository and submit pull requests.
 Thank you for choosing Lexi_Vault! If you encounter any issues or have suggestions for improvement, please don't hesitate to reach out to us. Happy learning!
-
