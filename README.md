@@ -17,4 +17,3 @@ Merging code frequently is a great way to avoid a broken application the night b
 [OMOTOMIWA RAHEEM](https://github.com/omotomiwa26)
 
 [AJIDE REMILEKUN](https://github.com/thekhalifaguy)
-
