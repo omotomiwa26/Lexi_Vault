@@ -7,10 +7,11 @@
 
 body {
     overflow-x: hidden;
-    color: #cdcdcd;
+    color: rgb(23, 97, 172);;
     font-size: 18px;
     font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
     background-image: url(../images/books_books.png);
+    background-color: rgba(209, 43, 168, 0.603);
 }
 
 footer {
