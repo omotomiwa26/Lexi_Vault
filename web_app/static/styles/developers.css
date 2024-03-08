@@ -9,16 +9,14 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 20;
+    text-align: center;
+    padding-top: 10px;
+    background-color: greenyellow;
 }
 
 .container {
     display: flex;
     height: 100vh;
-}
-
-.dev {
-    padding: 200;
-    text-align: center;
 }
 
 .left-section, .right-section {
@@ -37,7 +35,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .left-section .circle-box {
@@ -60,5 +58,4 @@ body {
 .contact_logos div {
     background-color: var(--off-white);
     padding: 0.25rem;
-
 }

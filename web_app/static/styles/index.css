@@ -11,6 +11,7 @@ body {
     font-size: 18px;
     font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
     background-image: url(../images/back.png);
+    background-image: no-repeat;
     background-color: rgba(209, 43, 168, 0.603);
 }
 
