@@ -15,11 +15,13 @@
     </div>
     <div class="container">
     <h1>Word Search</h1>
-    <input type="text" id="wordInput" placeholder="Enter a word to search...">
-    <button onclick="searchWord()">Search Word</button>
-    <button class="audio-btn" onclick="pronounceWord()">Pronounce Word</button>
-    <textarea id="allWords" readonly>{{ dictionary }} </textarea>
-    <div class="result" id="searchResult"></div>
-</div>
+    <form method="post">
+        <input type="text" name="word" id="wordInput" placeholder="Enter a word to search...">
+        <button type="submit" name="action" value="search">Search Word</button>
+    </form>
+    <br>
+    <button type="submit" name="action" value="pronounce">Pronounce Word</button>
+    <textarea id="allWords" readonly>{{ all_words }}</textarea>
+    <textarea id="searchResult" readonly>{{ meaning }}</textarea>
 </body>
 </html>
