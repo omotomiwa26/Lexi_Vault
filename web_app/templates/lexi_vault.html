@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../static/styles/lexi_vault.css">
+    <link rel="stylesheet" type="text/css" href="../static/styles/responsive.css">
     <link rel="icon" type="image/png" href="../static/images/logo.png">
-    <script src="../static/scripts/word_search.js"></script>
     <script src="../static/scripts/word_speech.js"></script>
     <title>Lexi_Vault</title>
 </head>
@@ -15,13 +15,15 @@
     </div>
     <div class="container">
     <h1>Word Search</h1>
-    <form method="post">
-        <input type="text" name="word" id="wordInput" placeholder="Enter a word to search...">
-        <button type="submit" name="action" value="search">Search Word</button>
-    </form>
+    <form method="post" id="wordInput">
+            <input type="text" autocomplete="on" autofocus="on" name="word" id="wordInput" placeholder="Enter a word to search...">
+            <button type="submit">Search Word</button>
+            <button type="button" id="audiobtn" onclick="pronounceWord()">
+                <img src="../static/images/audiobtn.png" alt="speaker" style="height: 15px; width: 30px;">
+            </button>
+        </form>
     <br>
-    <button type="submit" name="action" value="pronounce">Pronounce Word</button>
     <textarea id="allWords" readonly>{{ all_words }}</textarea>
-    <textarea id="searchResult" readonly>{{ meaning }}</textarea>
+    <textarea id="searchResult" readonly>{{ meaning }} - {{part_of_speech}}</textarea>
 </body>
 </html>
