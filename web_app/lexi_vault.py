@@ -33,25 +33,27 @@ class dictionary(db.Model):
 
 @app.route('/lexi_vault', strict_slashes=False, methods=['GET', 'POST'])
 def lexi_vault():
+    dictionary_data = dictionary.query.with_entities(dictionary.words).all()
+    all_words = '\n'.join(word[0] for word in dictionary_data)
+
     if request.method == 'POST':
         word = request.form.get('word')
         if word:
             dictionary_data = dictionary.query.filter_by(words=word).first()
             if dictionary_data:
                 meaning = dictionary_data.meanings
+                part_of_speech = dictionary_data.part_of_speech
             else:
                 meaning = 'Word not found'
-            all_words_data = dictionary.query.with_entities(dictionary.words).all()
-            all_words = '\n'.join(word[0] for word in dictionary_data)
-            return render_template('lexi_vault.html', all_words=all_words, meaning=meaning)
+                part_of_speech = ''
+            # all_words_data = dictionary.query.with_entities(dictionary.words).all()
+            # all_words = '\n'.join(word[0] for word in dictionary_data)
+            return render_template('lexi_vault.html',all_words=all_words, meaning=meaning, part_of_speech=part_of_speech)
             # dictionary_data = dictionary.query.filter_by(words='word').all()
             # return render_template('lexi_vault.html', dictionary=dictionary_data)
-    else:
-        dictionary_data = dictionary.query.with_entities(dictionary.words).all()
-        all_words = '\n'.join(word[0] for word in dictionary_data)
-        return render_template('lexi_vault.html', all_words=all_words)
-        #     return render_template('lexi_vault.html', dictionary='Word not found')
-    #dictionary_data = dictionary.query.all()
+    return render_template('lexi_vault.html', all_words=all_words)
+    #     #     return render_template('lexi_vault.html', dictionary='Word not found')
+    # #dictionary_data = dictionary.query.all()
             
     
 
