@@ -31,14 +31,31 @@ class dictionary(db.Model):
     part_of_speech = db.Column(db.String(80), unique=False, nullable=False)
     meanings = db.Column(db.String(800), unique=False, nullable=False)
 
-@app.route('/Lexi_Vault', strict_slashes=False, methods=['GET', 'POST'])
+@app.route('/lexi_vault', strict_slashes=False, methods=['GET', 'POST'])
 def lexi_vault():
-   #dictionary_data = dictionary.query.all()
     dictionary_data = dictionary.query.with_entities(dictionary.words).all()
-    
     all_words = '\n'.join(word[0] for word in dictionary_data)
-    #dictionary_data = dictionary.query.filter_by(words="cage").all()
-    return render_template('lexi_vault.html', dictionary=all_words)
+
+    if request.method == 'POST':
+        word = request.form.get('word')
+        if word:
+            dictionary_data = dictionary.query.filter_by(words=word).first()
+            if dictionary_data:
+                meaning = dictionary_data.meanings
+                part_of_speech = dictionary_data.part_of_speech
+            else:
+                meaning = 'Word not found'
+                part_of_speech = ''
+            # all_words_data = dictionary.query.with_entities(dictionary.words).all()
+            # all_words = '\n'.join(word[0] for word in dictionary_data)
+            return render_template('lexi_vault.html',all_words=all_words, meaning=meaning, part_of_speech=part_of_speech)
+            # dictionary_data = dictionary.query.filter_by(words='word').all()
+            # return render_template('lexi_vault.html', dictionary=dictionary_data)
+    return render_template('lexi_vault.html', all_words=all_words)
+    #     #     return render_template('lexi_vault.html', dictionary='Word not found')
+    # #dictionary_data = dictionary.query.all()
+            
+    
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000, host='127.0.0.1')
