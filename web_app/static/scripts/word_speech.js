@@ -1,23 +1,14 @@
-function pronounceWord() {
-    var word = document.getElementById("wordInput").value;
-    
-    // Check if the browser supports the SpeechSynthesis API
-    if ('speechSynthesis' in window) {
-        // Create a new SpeechSynthesisUtterance object with the word to be pronounced
-        var utterance = new SpeechSynthesisUtterance(word);
-        
-        // Set the language to English (or any desired language)
-        utterance.lang = 'en-US';
+let speech = new SpeechSynthesisUtterance();
 
-        utterance.onerror = function(event) {
-            console.error('Speech synthesis error:', event.error);
-        };
+// Get the list of available voices
+let voices = window.speechSynthesis.getVoices();
 
-        // Speak the word
-        speechSynthesis.speak(utterance);
-    } else {
-        // If the browser doesn't support SpeechSynthesis API, provide a fallback or display an error message
-        console.log("Text-to-speech is not supported in this browser.");
-        // You can also display a message to the user indicating that their browser doesn't support text-to-speech
-    }
-}
+document.querySelector("#audioBtn").addEventListener("click", () => {
+    speech.text = document.querySelector("#wordInput").value;
+
+    // Randomly select a voice
+    let randomVoiceIndex = Math.floor(Math.random() * voices.length);
+    speech.voice = voices[randomVoiceIndex];
+
+    window.speechSynthesis.speak(speech);
+});

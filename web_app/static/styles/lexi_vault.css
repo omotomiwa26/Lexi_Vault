@@ -13,7 +13,7 @@ body {
 }
 
 .img img {
-    display: block;
+    display: flex;
     margin: 5px auto;
     max-width: fit-content;
     width: 100%
@@ -35,25 +35,46 @@ h1 {
     color: #333;
 }
 input[type="text"], textarea {
+    margin-top: 20px;
     width: calc(100% - 20px);
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     outline: none;
+    color: purple; 
 }
-button {
+input[type="submit"] {
     padding: 10px 20px;
     background-color: #008CBA;
     color: #fff;
-    border: none;
-    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    border-radius: 35px;
     cursor: pointer;
     font-size: 16px;
+    margin-bottom: 10px;
 }
 
-button:hover {
+
+#audioBtn {
+    background-image: url('../images/audiobtn.png');
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    padding-right: 20px 20px; 
+    padding: 10px 20px;
+    background-color: #008CBA;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+ input[type="submit"]:hover, #audioBtn:hover {
     background-color: #45a049;
 }
 textarea {
