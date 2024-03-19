@@ -7,10 +7,10 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, rgba(6, 104, 6, 0.89), rgba(18, 158, 158, 0.808), rgb(104, 95, 104));
+    background-color: whitesmoke;
     margin: 0;
     padding: 0;
-   
+    background-image: url(../images/back.png);
 }
 
 .container {
@@ -29,5 +29,5 @@ h1 {
 p {
     font-size: 16px;
     line-height: 1.5;
-    color:purple;
+    color: #333;
 }
