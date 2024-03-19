@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #4CAF50;
+    background: linear-gradient(to right, rgba(6, 104, 6, 0.89), rgba(18, 158, 158, 0.808), rgb(104, 95, 104));
     margin: 0;
     padding: 20px;
 }
@@ -35,9 +35,9 @@ h1 {
     color: #333;
 }
 input[type="text"], textarea {
-    margin-top: 20px;
+    margin-top: 5px;
     width: calc(100% - 20px);
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -64,7 +64,6 @@ input[type="submit"] {
     background-repeat: no-repeat;
     padding-right: 20px 20px; 
     padding: 10px 20px;
-    background-color: #008CBA;
     color: #fff;
     border: 0;
     outline: 0;
