@@ -41,13 +41,12 @@ Backup and Recovery
 Troubleshooting
 
 Common Issues
-FAQ Section
 Support and Community
 Development and Contributions
 
 Building Lexi_Vault Locally
 Contribution Guidelines
-Code of Conduct
+Codes of Conduct
 Roadmap
 
 Planned Features
