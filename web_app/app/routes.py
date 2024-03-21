@@ -1,9 +1,7 @@
-from flask import Flask, render_template, request, jsonify
-from flask_sqlalchemy import SQLAlchemy 
-from sqlalchemy import create_engine
-from models import dictionary
-from sqlalchemy.orm import sessionmaker
-
+from flask import render_template, request, jsonify
+from web_app.app import app, db
+from web_app.app import models
+from web_app.app.models import dictionary
 
 
 
@@ -42,7 +40,7 @@ def lexi_vault():
 def get_word_details():
     word = request.form.get('wordtext')
     if word:
-        dictionary_data = dictionary.query.filter_by(words=word).first()
+        dictionary_data = models.query.filter_by(words=word).first()
         if dictionary_data:
             meaning = dictionary_data.meanings
             part_of_speech = dictionary_data.part_of_speech
