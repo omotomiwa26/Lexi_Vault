@@ -2,7 +2,7 @@
 
 <p>
 
-<img src="https://github.com/omotomiwa26/Lexi_Vault/blob/master/web_app/static/images/lexi_vault.png"/>
+<img src="https://github.com/omotomiwa26/Lexi_Vault/blob/master/web_app/app/static/images/lexi_vault.png"/>
 
 </p>
 
