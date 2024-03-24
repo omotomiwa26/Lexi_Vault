@@ -1,73 +1,31 @@
-#!/usr/bin/python3
+import csv
 
+output_file = 'db_dictionary.csv'
+sql_output_file = 'lexi_vault_db.sql'
 
-"""
-This Python script converts the dictionary.csv
-file for the Lexi_Vault project to SQL file.
-"""
-import csv as c
-
-
-"""
-CSV file input and SQL file output
-file paths
-"""
-csv_file = 'dictionary.csv'
-sql_file = 'test.sql'
-
-
-"""
-Define the SQL database
-table schema
-"""
-table_name = 'dictionary'
-columns = ['word_id', 'words', 'part_of_speech', 'meanings']
-
-
-"""
-Open CSV and SQL files
-"""
-with open(csv_file, 'r', newline='', encoding='utf-8') as csvfile, \
-        open(sql_file, 'w', encoding='utf-8') as sqlfile:
-
-    csvreader = c.reader(csvfile)
-    next(csvreader)
-
-
-    """
-    Initialize the SQL 
-    INSERT statement
-    """
-    sql_insert = F"INSERT INTO {table_name} ({', '.join(columns)}) VALUES "
+# Open the output CSV file for reading
+with open(output_file, 'r', newline='', encoding='utf-8') as csvfile:
+    csvreader = csv.reader(csvfile)
     
-
-    """
-    SQL statements for converting 
-    to SQL file
-    """
-    for idx, row in enumerate(csvreader, start=1):
-        word_id = idx
-        words = row[0].replace("'", "''")
-        part_of_speech = row[1].replace("'", "''")
-        meanings = row[2].replace("'", "''")
-
-
-        """
-        Generate and Append values to the 
-        SQL INSERT statement
-        """
-        sql_insert += F"({word_id}, '{words}', '{part_of_speech}', '{meanings}'),"
-
-
-    """
-    Remove the trailing comma and
-    close the statement
-    """
-    sql_insert = sql_insert.rstrip(',') + ';'
-
-
-    """
-    Write INSERT statement to SQL file
-    """ 
-    sqlfile.write(sql_insert)
-
+    # Open the SQL output file for writing
+    with open(sql_output_file, 'w', encoding='utf-8') as sqlfile:
+        # Write the SQL statements header
+        sqlfile.write('INSERT INTO dico (words, part_of_speech, meanings) VALUES ')
+        
+        # Initialize an empty list to store the formatted rows
+        rows = []
+        
+        # Iterate over each row in the CSV file
+        for row in csvreader:
+            # Format the row data for SQL
+            words = row[0].replace("'", "''")  # Escape single quotes
+            part_of_speech = row[1].replace("'", "''")  # Escape single quotes
+            meanings = row[2].replace("'", "''")  # Escape single quotes
+            
+            # Add the formatted row to the list
+            rows.append(f"('{words}', '{part_of_speech}', '{meanings}')")
+        
+        # Join all the formatted rows with commas and write to the SQL file
+        sqlfile.write(',\n'.join(rows))
+        # Write a semicolon to terminate the INSERT statement
+        sqlfile.write(';')
