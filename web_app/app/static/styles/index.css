@@ -96,7 +96,7 @@ footer {
 }
 
 .menu_links a {
-    color: rgb(23, 97, 172);
+    color: rgba(18, 158, 158, 0.808);
     transition: color 0.3s ease;
 }
 
