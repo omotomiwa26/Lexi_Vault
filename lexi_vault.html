@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles/lexi_vault.css">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <script src="./scripts/word_search.js"></script>
+    <script src="./scripts/word_speech.js"></script>
+    <title>Lexi_Vault</title>
+</head>
+<body>
+    <div class="img">
+    <img src="./images/lexi_vault.png" alt="Your Image">
+    </div>
+    <div class="container">
+    <h1>Word Search</h1>
+    <input type="text" id="wordInput" placeholder="Enter a word to search...">
+    <button onclick="searchWord()">Search Word</button>
+    <button class="audio-btn" onclick="pronounceWord()">Pronounce Word</button>
+    <textarea id="allWords" placeholder="All words will be displayed here..." readonly></textarea>
+    <div class="result" id="searchResult"></div>
+</div>
+</body>
+</html>
